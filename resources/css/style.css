@@ -1,0 +1,209 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #1a1a1a;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1em;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+h1 {
+  font-size: 64px;
+}
+h2 {
+  font-size: 48px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+}
+#sd-app {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#sd-app #sd-sidebar {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#sd-app #sd-sidebar #sd-teams-list {
+  border-right: 1px solid gray;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  z-index: 0;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4NCiAgICAgIDxkZWZzPg0KICAgICAgICA8cGF0dGVybiBpZD0iZG90cyIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj4NCiAgICAgICAgICA8Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iMiIgZmlsbD0iIzBkMGQwZCIgLz4NCiAgICAgICAgPC9wYXR0ZXJuPg0KICAgICAgPC9kZWZzPg0KICAgICAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBmaWxsPSJ1cmwoI2RvdHMpIiAvPg0KICAgIDwvc3ZnPg==');
+  background-size: 14px 14px;
+  background-repeat: repeat;
+  background-position: 4px 4px;
+  opacity: 0;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  -webkit-transition: opacity 200ms ease-out, top 200ms ease-out, left 200ms ease-out;
+          transition: opacity 200ms ease-out, top 200ms ease-out, left 200ms ease-out;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item:nth-child(2n) {
+  background-color: #f3f3f3;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item:hover,
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item.sd-selected {
+  background-color: #e6e6e6;
+  z-index: 1;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item:hover:after,
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item.sd-selected:after {
+  opacity: 1;
+  top: 10px;
+  left: 10px;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item:hover .sd-team-name,
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item.sd-selected .sd-team-name {
+  color: #f3f3f3;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item:hover .sd-team-border,
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item.sd-selected .sd-team-border {
+  width: 100%;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item:active .sd-team-border {
+  opacity: 0.8;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item .sd-team-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: color 200ms ease-out;
+          transition: color 200ms ease-out;
+}
+#sd-app #sd-sidebar #sd-teams-list .sd-team-item .sd-team-border {
+  width: 5px;
+  height: 100%;
+  background-color: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  -webkit-transition: width 200ms ease-out;
+          transition: width 200ms ease-out;
+}
+#sd-app #sd-stats {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxIiB3aWR0aD0iNTEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNTEiIGhlaWdodD0iNTEiIGZpbGw9IiNjZGNkY2QiIC8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjZmZmIiAvPjwvc3ZnPg==');
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+  left: 300px;
+  right: 0;
+  bottom: 0;
+}
+#sd-app #sd-stats #sd-stats-info {
+  box-sizing: border-box;
+  height: 156px;
+  padding: 36px;
+}
+#sd-app #sd-stats #sd-stats-info h4 {
+  margin: 17px 0 0;
+}
+#sd-app #sd-stats #sd-stats-info h4 span {
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 2px solid #0d0d0d;
+}
+#sd-app #sd-stats #sd-stats-info h4 span:last-child {
+  margin: 0;
+  border: none;
+}
+#sd-app #sd-stats #sd-stats-graph {
+  box-sizing: border-box;
+  padding: 5px 40px 60px 60px;
+  position: absolute;
+  top: 156px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#sd-app #sd-stats #sd-stats-graph svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#sd-app #sd-stats #sd-stats-graph svg path,
+#sd-app #sd-stats #sd-stats-graph svg line {
+  stroke: #0d0d0d;
+  stroke-width: 2px;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-line,
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-axis path {
+  fill: none;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-point {
+  cursor: pointer;
+  fill: #fff;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-point:hover circle:last-child {
+  display: none;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-point:hover .sd-stats-graph-label {
+  display: block;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-point circle {
+  stroke: #0d0d0d;
+  stroke-width: 2px;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-point .sd-stats-graph-label {
+  display: none;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-point .sd-stats-graph-label text {
+  fill: #f3f3f3;
+  line-height: 1em;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-point .sd-stats-graph-label rect {
+  fill: #0d0d0d;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-axis text {
+  font-size: 12px;
+  font-weight: 700;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-axis text.sd-stats-graph-axis-label {
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-axis path {
+  shape-rendering: crispEdges;
+}

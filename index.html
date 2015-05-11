@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Scoring Depth</title>
+
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:600|Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+
+  </head>
+  <body>
+
+    <div id="sd-app">
+      <div id="sd-stats">
+        <div id="sd-stats-graph"></div>
+      </div>
+      <div id="sd-sidebar">
+        <div id="sd-teams-list"></div>
+      </div>
+    </div>
+
+    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <pattern id="dots" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(35)"> 
+          <rect x="0" y="0" width="10" height="10" fill="#fff" />
+          <circle cx="7" cy="7" r="2" fill="#0d0d0d" />
+        </pattern>
+        <pattern id="diagonal-lines" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(-45)"> 
+          <rect x="0" y="0" width="10" height="10" fill="#0d0d0d" />
+          <rect x="0" y="0" width="10" height="7" fill="#fff" />
+        </pattern>
+      </defs>
+    </svg>
+
+    <!-- <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <pattern id="dots" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+          <circle cx="5" cy="5" r="2" fill="#0d0d0d" />
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="14" height="14" fill="url(#dots)" />
+    </svg> -->
+    
+    <script type="text/template" id="template-sd-stats">
+      <div id="sd-stats-info">
+        <h2>
+          <span><%- data.name %></span>
+        </h2>
+        <h4>
+          <span>#<%- data.stats.rank %></span>
+          <span><%- data.stats.wins %>W, <%- data.stats.losses %>L, <%- data.stats.overtime_losses %>OL</span>
+        </h4>
+      </div>
+      <div id="sd-stats-graph"></div>
+    </script>
+
+    <script type="text/template" id="template-sd-team-item">
+      <div class="sd-team">
+        <div class="sd-team-name"><%- data.name %></div>
+        <div class="sd-team-border" style="background-color: <%- data.colors[0] %>"></div>
+      </div>
+    </script>
+    
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
+    <script type="text/javascript" src="bower_components/d3/d3.js"></script>
+
+    <script type="text/javascript" src="resources/js/main.js"></script>
+  
+  </body>
+</html>
