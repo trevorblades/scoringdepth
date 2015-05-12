@@ -166,6 +166,16 @@ h4 {
   stroke: #0d0d0d;
   stroke-width: 2px;
 }
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-legend text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+}
+#sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-legend rect {
+  stroke: #0d0d0d;
+  stroke-width: 2px;
+}
 #sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-line,
 #sd-app #sd-stats #sd-stats-graph svg .sd-stats-graph-axis path {
   fill: none;
